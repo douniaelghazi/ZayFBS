@@ -4,6 +4,9 @@
     padding: 0px ;
     box-sizing: border-box;
 }
+html{
+    scroll-behavior: smooth;
+}
 
 body {
     font-family: Arial, sans-serif;
@@ -57,21 +60,22 @@ header {
     border-radius: 5px;
 }
 
-.hero-content {
+.hero-content  {
     position: absolute;
     top: 30%;
     left: 50px;
-    color: white;
+    color: black
 }
 
-.hero-content button {
+/* .hero-content  {
     margin-top: 10px;
     padding: 10px 20px;
     background: #4CAF50;
     border: none;
-    color: white;
-    border-radius: 6px;
-}
+    color:black;
+    border-radius: 10px;
+   
+} */
 
 /* FERMES */
 .title {
@@ -80,21 +84,32 @@ header {
     text-align: center;
 }
 
-.img img {
-    width: 60%;
-    display: block;
+/* container dyal images */
+.Fermes-grid {
+    display: flex;
+    justify-content: center;   
+    gap: 60px;                 
+    width: 100%;             
+    max-width: 1000px;         
     margin: auto;
-    border-radius: 12px;
-    height: 350px;
-
 }
 
+/* images */
+.Fermes-grid img {
+    width: 48%;                
+    height: 300px;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+/* text */
 .title-content {
     width: 90%;
-    margin: 15px auto;
+    margin: 20px auto;
     background: #eee;
     padding: 15px;
     border-radius: 10px;
+    text-align: center;
 }
 
 /*PROCESSUS*/
