@@ -28,6 +28,7 @@ function displayProducts() {
         return;
     }
 
+    
     container.innerHTML = "";
 
     products.forEach((product, index) => {
