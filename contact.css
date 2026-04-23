@@ -1,0 +1,155 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+
+    margin: 0;
+}
+
+header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: white ;
+    padding: 5px 40px;
+    margin: 0;
+}
+
+.logo {
+   color: #4CAF50;
+    font-size: large;
+   font-weight: bold;
+}
+
+.menu {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.menu a {
+    text-decoration: none;
+    color: black;
+    font-weight: 500;
+}
+main{
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+}
+
+.contact{
+    width: 500px;          /* صغرنا الفورم */
+    background: #f3f3f3;
+    margin: 50px auto;
+    padding: 100px;
+    border-radius: 3px;
+}
+
+.contact h1{
+    text-align: center;
+    font-size: 28px;       /* title أصغر */
+    font-weight: bold;
+    margin-bottom: 25px;
+}
+
+/* hide labels */
+form label{
+    display: none;
+}
+
+form input,
+form textarea{
+    width: 100%;
+    background: #dcdcdc;
+    border: none;
+    border-radius: 8px;
+    padding: 12px ;
+    margin-bottom: 15px;
+    font-size: 16px;
+    outline: none;
+    box-sizing: border-box;
+}
+
+form textarea{
+    height: 120px;   /* textarea أصغر */
+    resize: none;
+}
+
+form button{
+    background: #b6c1a5;
+    border: none;
+    padding: 10px 25px;
+    font-size: 18px;
+    border-radius: 10px;
+    cursor: pointer;
+    display: block;
+    margin-left: auto;
+}
+
+
+
+
+
+
+
+
+
+/* footer */
+footer {
+    background: #9fae8c;
+    color: black;
+    padding: 20px 60px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+    border-radius: 10px;
+    margin-top: 90px;
+}
+
+/* titles */
+footer h2 {
+    font-size: 20px;
+    margin-bottom: 15px;
+}
+
+/* text */
+footer p {
+    font-size: 14px;
+    margin-bottom: 8px;
+    transition: 0.3s;
+}
+
+/* logo color */
+.footer-logo h2 {
+    color: green;
+}
+
+/* hover */
+footer p:hover {
+    color: white;
+    cursor: pointer;
+}
+
+/* responsive */
+@media (max-width: 768px) {
+    footer {
+        grid-template-columns: 1fr;
+        text-align: center;
+        padding: 20px;
+    }
+}
+
+
+
+
+
+

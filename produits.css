@@ -12,12 +12,17 @@ body {
     min-height: 100vh;
     margin: 0;
 }
+header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
 
 .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: #ddd;
+    background: white;
     padding: 15px 40px;
 }
 
@@ -56,12 +61,184 @@ main{
     font-weight: bold;
     border-radius: 5px;
 }
-
 .products {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
     padding: 20px;
+    max-width: 1200%;
+    margin: auto;
+    margin-bottom: 100px;
+}
+.card {
+    background: #ffffff;
+    color: black;
+    border-radius: 15px;
+    overflow: hidden;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: 0.3s;
+    padding-bottom: 15px;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+.card img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+}
+
+.card h3 {
+    margin: 15px 0 10px;
+    color: #2e7d32;
+}
+.card p {
+    margin: 5px 10px;
+    color: #555;
+}
+
+.card strong {
+    color: #4CAF50;
+    font-size: 18px;
+}
+
+.card button {
+    margin: 5px;
+    padding: 8px 12px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.card button:first-of-type {
+    background: #2e7d32;
+    color: white;
+}
+
+.card button:first-of-type:hover {
+    background: #2e7d32;
+}
+.card button:last-of-type {
+    background: #e53935;
+    color: white;
+}
+
+.card button:last-of-type:hover {
+    background: #e53935;
+}
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.6);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background: white;
+    color: black;
+    padding: 20px;
+    border-radius: 10px;
+    width: 400px;
+    max-width: 90%;
+}
+
+#closeModal {
+    float: right;
+    cursor: pointer;
+    font-size: 20px;
+}
+/* Modal container */
+#modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Modal box */
+#modal-body {
+    background: #ffffff;
+    color: #333;
+    padding: 30px;
+    border-radius: 15px;
+    width: 350px;
+    max-width: 90%;
+    text-align: center;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    animation: fadeIn 0.3s ease;
+}
+
+/* Title */
+#modal-body h2 {
+    margin-bottom: 20px;
+    color: #2c3e50;
+}
+
+/* Inputs + textarea */
+#modal-body input,
+#modal-body textarea {
+    width: 100%;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    outline: none;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+/* Focus effect */
+#modal-body input:focus,
+#modal-body textarea:focus {
+    border-color: #27ae60;
+    box-shadow: 0 0 5px rgba(39,174,96,0.3);
+}
+
+/* Textarea */
+#modal-body textarea {
+    resize: none;
+    height: 100px;
+}
+
+/* Button */
+#modal-body button {
+    background: #27ae60;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+/* Hover button */
+#modal-body button:hover {
+    background: #219150;
+}
+
+/* Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 footer {
@@ -71,28 +248,42 @@ footer {
     border-radius: 10px;
 }
 
+/* grid layout */
 footer {
+    background: #9fae8c; 
+    color: black;
+    padding: 20px 60px;
+    border-radius: 10px;
+    width: 100%;
+
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 40px;
 }
+footer {
+    margin-top: auto;
+}
 
+/* titles */
 footer h2 {
     color: black;
     font-size: 18px;
     margin-bottom: 15px;
 }
 
+/* text */
 footer p {
     font-size: 14px;
     margin-bottom: 8px;
     color: black;
 }
 
+/* logo special */
 .footer-logo h2 {
     color: #4CAF50;
 }
 
+/* hover effect */
 footer p:hover {
     color: white;
     cursor: pointer;
@@ -100,6 +291,7 @@ footer p:hover {
 }
 
 
+/* responsive */
 @media (max-width: 768px) {
     footer {
         grid-template-columns: 1fr;
