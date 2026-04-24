@@ -7,50 +7,108 @@
 </head>
 <body>
 
-    
-    <header>
-        <nav class="navbar">
-            <h1 class="logo">ZayFBS</h1>
-            <ul class="menu">
-                <li><a href="index.html">Accueil</a></li>
-                <li><a href="#">Mes produits</a></li>
-                <li><a href="contact.html">Contacter Nous</a></li>
-               
-            </ul>
-        </nav>
-    </header>
-    <main>
-    <section class="hero">
-        <p>Découvrez notre sélection de produits de haute qualité à des prix imbattable </p>
-    </section>  
+<header>
+    <nav class="navbar">
+        <h1 class="logo">ZayFBS</h1>
+        
+        <ul class="menu">
+            <li><a href="index.html">Accueil</a></li>
+            <li><a href="contact.html">Contacter Nous</a></li>
 
-    <section id="products" class="products">
+            <li id="open-cart" class="cart-btn">
+                🛒 Panier (<span id="cart-count">0</span>)
+            </li>
+        </ul>
+    </nav>
+</header>
+
+<main>
+
+    <section class="hero">
+        <p>
+            Découvrez notre sélection de produits de haute qualité 
+            à des prix imbattable
+        </p>
     </section>
-   <!-- Modal générique -->
-<div id="modal" class="modal">
-    <div class="modal-content">
-        <span id="closeModal">&times;</span>
-        <div id="modal-body"></div>
+
+    <section id="products" class="products"></section>
+
+    <!-- Modal détails -->
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span id="closeModal">&times;</span>
+            <div id="modal-body"></div>
+        </div>
     </div>
-</div>
+
+    <!-- Modal edit -->
+    <div id="edit-modal" class="modal">
+        <div class="edit-box">
+
+            <div class="edit-header">
+                <h2>Modifier Produit</h2>
+                <span id="close-edit">&times;</span>
+            </div>
+
+            <label>Titre:</label>
+            <input type="text" id="edit-titre">
+
+            <label>Prix (MAD):</label>
+            <input type="number" id="edit-prix">
+
+            <label>Description:</label>
+            <textarea id="edit-desc"></textarea>
+
+            <button id="save-edit-btn">
+                Enregistrer
+            </button>
+        </div>
+    </div>
+
+    <!-- Side Cart -->
+    <div id="side-cart" class="side-cart">
+
+        <div class="cart-header">
+            <h2>Votre Panier</h2>
+            <span id="close-cart">&times;</span>
+        </div>
+
+        <div id="cart-items-container"></div>
+
+        <div class="cart-footer">
+            <h3>
+                Total Global:
+                <span id="cart-total">0</span> MAD
+            </h3>
+
+            <button class="checkout-btn">
+                Commander
+            </button>
+        </div>
+
+    </div>
+
 </main>
 
-    <footer>
-        <div class="footer-logo">
-            <h2>ZayFBS</h2>
-            <p>© 2026 ZayFBS</p>
-       </div>
-       <div class="footer-Région">
-            <h2>Région</h2>
-            <p>Fquih Ben Saleh – Maroc</p>
-       </div>
-       <div id="contact" class="footer-contact">
-        <h2> Contact</h2>
+<footer>
+    <div class="footer-logo">
+        <h2>ZayFBS</h2>
+        <p>© 2026 ZayFBS</p>
+    </div>
+
+    <div class="footer-region">
+        <h2>Région</h2>
+        <p>Fquih Ben Saleh – Maroc</p>
+    </div>
+
+    <div class="footer-contact">
+        <h2>Contact</h2>
         <p>Email : contact@zayfbs.com</p>
         <p>Tele : +212(0) 537 21 37 92</p>
-     </div>
-   </footer>
-   <script src="script.js"></script>
+    </div>
+</footer>
+
+<script src="script.js"></script>
 
 </body>
 </html>
