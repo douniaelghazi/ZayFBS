@@ -70,6 +70,78 @@ main {
     border-radius: 5px;
 }
 
+
+/* ADD MODAL */
+#add-modal {
+    z-index: 3000;
+}
+
+#add-modal .modal-content {
+    background: white;
+    width: 90%;
+    max-width: 500px;
+    padding: 30px;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    position: relative;
+}
+
+#add-modal h2 {
+    color: #4CAF50;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+#add-modal label {
+    font-weight: bold;
+    color: #333;
+}
+
+#add-modal input,
+#add-modal textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    outline: none;
+}
+
+#add-modal textarea {
+    resize: none;
+    height: 100px;
+}
+
+#add-modal input:focus,
+#add-modal textarea:focus {
+    border-color: #4CAF50;
+}
+
+.add-btn {
+    background: #4CAF50;
+    color: white;
+    border: none;
+    padding: 12px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.add-btn:hover {
+    background: #388E3C;
+}
+
+#close-add {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 25px;
+    cursor: pointer;
+    color: black;
+}
+
 /* PRODUCTS */
 .products {
     display: grid;
@@ -135,6 +207,28 @@ main {
     color: white;
 }
 
+.center-box {
+  display: flex;
+  justify-content: center; /* Kat-jibha f l-west */
+  margin: 20px 0;
+}
+
+#btnOpen {
+  background: #4CAF50;
+  color: white;
+  padding: 12px 25px;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+#btnOpen:hover {
+  background: #388E3C;
+  transform: scale(1.05); /* Kat-kber chwiya */
+}
+
 /* MODAL */
 .modal {
     display: none;
@@ -159,6 +253,8 @@ main {
     cursor: pointer;
     font-size: 22px;
 }
+
+
 
 /* EDIT MODAL */
 #edit-modal {
@@ -207,6 +303,71 @@ main {
     padding: 12px;
     border-radius: 5px;
     cursor: pointer;
+}
+
+/* EDIT MODAL */
+#edit-modal {
+    z-index: 3000;
+}
+
+.edit-box {
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    width: 90%;
+    max-width: 500px;
+    color: black;
+}
+
+.edit-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.edit-header h2 {
+    color: #4CAF50;
+}
+
+/* body dyal form */
+.edit-body {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.edit-body label {
+    font-weight: bold;
+}
+
+#edit-titre,
+#edit-prix,
+#edit-desc {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+}
+
+#edit-desc {
+    resize: none;
+    height: 100px;
+}
+
+#save-edit-btn {
+    width: 100%;
+    background: #4CAF50;
+    color: white;
+    border: none;
+    padding: 12px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+#save-edit-btn:hover {
+    background: #388E3C;
 }
 
 /* SIDE CART */

@@ -25,49 +25,68 @@
 <main>
 
     <section class="hero">
-        <p>
-            Découvrez notre sélection de produits de haute qualité 
-            à des prix imbattable
-        </p>
+        <p>Découvrez notre sélection de produits de haute qualité à des prix imbattable</p>
     </section>
+
+    <div class="center-box">
+        <button id="btnOpen">➕ Ajouter un Produit</button>
+    </div>
 
     <section id="products" class="products"></section>
 
-    <!-- Modal détails -->
+
     <div id="modal" class="modal">
         <div class="modal-content">
-            <span id="closeModal">&times;</span>
+            <span id="closeModal" class="close">&times;</span>
             <div id="modal-body"></div>
         </div>
     </div>
 
-    <!-- Modal edit -->
     <div id="edit-modal" class="modal">
         <div class="edit-box">
-
             <div class="edit-header">
                 <h2>Modifier Produit</h2>
-                <span id="close-edit">&times;</span>
+                <span id="close-edit" class="close">&times;</span>
             </div>
+            
+            <div class="edit-body">
+                <label>Titre:</label>
+                <input type="text" id="edit-titre">
 
-            <label>Titre:</label>
-            <input type="text" id="edit-titre">
+                <label>Prix (MAD):</label>
+                <input type="number" id="edit-prix">
 
-            <label>Prix (MAD):</label>
-            <input type="number" id="edit-prix">
+                <label>Description:</label>
+                <textarea id="edit-desc"></textarea>
 
-            <label>Description:</label>
-            <textarea id="edit-desc"></textarea>
-
-            <button id="save-edit-btn">
-                Enregistrer
-            </button>
+                <button id="save-edit-btn">Enregistrer</button>
+            </div>
         </div>
     </div>
 
-    <!-- Side Cart -->
-    <div id="side-cart" class="side-cart">
+    <div id="add-modal" class="modal">
+        <div class="modal-content">
+            <span id="close-add" class="close">&times;</span>
+            <h2 style="color: #4CAF50;">Ajouter un Produit</h2>
+            
+            <label>Chemin de l'image:</label>
+            <input type="text" id="add-image" placeholder="ex: image/EV.png">
 
+            <label>Titre:</label>
+            <input type="text" id="add-titre" placeholder="Nom du produit">
+
+            <label>Prix (MAD):</label>
+            <input type="number" id="add-prix" placeholder="Ex: 150">
+
+            <label>Description:</label>
+            <textarea id="add-desc" placeholder="Description courte..."></textarea>
+
+            <button id="addProductBtn" class="add-btn">Ajouter au catalogue</button>
+        </div>
+    </div>
+
+
+    <div id="side-cart" class="side-cart">
         <div class="cart-header">
             <h2>Votre Panier</h2>
             <span id="close-cart">&times;</span>
@@ -76,20 +95,12 @@
         <div id="cart-items-container"></div>
 
         <div class="cart-footer">
-            <h3>
-                Total Global:
-                <span id="cart-total">0</span> MAD
-            </h3>
-
-            <button class="checkout-btn">
-                Commander
-            </button>
+            <h3>Total Global: <span id="cart-total">0</span> MAD</h3>
+            <button class="checkout-btn">Commander</button>
         </div>
-
     </div>
 
 </main>
-
 <footer>
     <div class="footer-logo">
         <h2>ZayFBS</h2>

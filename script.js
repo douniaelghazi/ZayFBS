@@ -52,7 +52,50 @@ function displayProducts() {
 
 displayProducts();
 
+let addBtn = document.getElementById("addProductBtn");
+let addModal = document.getElementById("add-modal");
+let btnOpen = document.getElementById("btnOpen");
+let closeAdd = document.getElementById("close-add");
 
+// ouvrir modal
+btnOpen.onclick = function () {
+    addModal.style.display = "flex";
+};
+
+// fermer modal
+closeAdd.onclick = function () {
+    addModal.style.display = "none";
+};
+
+// ajouter produit
+addBtn.onclick = function () {
+    let image = document.getElementById("add-image").value;
+    let titre = document.getElementById("add-titre").value;
+    let prix = document.getElementById("add-prix").value;
+    let description = document.getElementById("add-desc").value;
+
+    if (image === "" || titre === "" || prix === "" || description === "") {
+        alert("Remplissez tous les champs");
+        return;
+    }
+
+    products.push({
+        image: image,
+        titre: titre,
+        prix: prix,
+        description: description
+    });
+
+    displayProducts();
+
+    // vider les inputs
+    document.getElementById("add-image").value = "";
+    document.getElementById("add-titre").value = "";
+    document.getElementById("add-prix").value = "";
+    document.getElementById("add-desc").value = "";
+
+    addModal.style.display = "none";
+};
 let contact = document.getElementById("formContact");
 
 if (contact) {
@@ -74,13 +117,12 @@ if (contact) {
     });
 }
 
-// Fonction dyal Supprimer
+// Fonction Supprimer
 function deleteProduct(index) {
-    // Kay-tl3 message kay-t2eked wach bseh bghiti t-ms7o
     let confirmation = confirm("Voulez-vous vraiment supprimer ce produit ?");
     if (confirmation) {
-        products.splice(index, 1); // Kay-ms7 produit mn l'array
-        displayProducts(); // Kay-3awd i-afficher l'produits jdad
+        products.splice(index, 1); 
+        displayProducts();
     }
 }
 
@@ -199,4 +241,7 @@ if (openCartBtn && sideCartElement) {
 if (closeCartBtn && sideCartElement) {
     closeCartBtn.onclick = () => sideCartElement.classList.remove("active");
 }
+
+
+
 
